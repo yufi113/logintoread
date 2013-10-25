@@ -30,6 +30,7 @@ class plgContentlogintoread extends JPlugin
 		  }
 		 }
 		}
+		$type = $this->params->get('type',0);
 		if($context =='com_k2.item'){
 		if ($this->params->get('k2on',0)==0) return;
 		 $catid = $this->params->get('category_id',array());
@@ -50,13 +51,18 @@ class plgContentlogintoread extends JPlugin
 	
 	
 		$url = 'index.php?'.JURI::buildQuery($vars);
+		if ($type ==0){
         $doc -> addScript(JURI::root()."plugins/content/logintoread/js/jquery-1.9.1.js");
 		$doc -> addScript(JURI::root()."plugins/content/logintoread/js/jquery-ui-1.10.2.custom.min.js");
 		$doc -> addStyleSheet(JURI::root()."plugins/content/logintoread/css/logintoread.css");
 		$doc -> addScript(JURI::root()."plugins/content/logintoread/js/logintoread.js");
+		}
 		  
-		/*k2*/
+		
 		if ($user->id==0){
+			if ($type ==1) $app->redirect(JRoute::_('index.php?option=com_users&view=login',false));
+			if ($type ==2) $logintext ='<a href="'.JRoute::_('index.php?option=com_users&view=login',false).'">'.JText::_('Login to read').'</a>';
+			else
 		
 		  $logintext='<div id="dialog" style="display:none"><form action="'.JRoute::_('index.php').'" method="post" id="login-form" ><fieldset class="userdata">
 	<p id="form-login-username">

@@ -7,7 +7,7 @@
 <license>This extension in released under the GNU/GPL License - http://www.gnu.org/copyleft/gpl.html</license>
 <authorEmail>jianbo.zhu@gmail.com</authorEmail>
 <authorUrl>http://nhuang.com/</authorUrl>
-<version>1.1</version>
+<version>1.2</version>
 <description>PLUGIN_LOGIN_TO_READ_DESC</description>
 <files>
 	<filename plugin="logintoread">logintoread.php</filename>
@@ -27,6 +27,11 @@
 	<fields name="params">
 	
 		<fieldset name="basic">
+		<field name="type" type="radio" default="0" label="Type" description="">
+		  <option value="0">pop-up</option>
+		   <option value="1">redirect</option>
+		    <option value="2">Show "introtext" only</option>
+                </field>
 		<field name="articleon" type="radio" default="0" label="LOGIN_READ_ARTCILE_ON" description="">
                     <option value="0">OFF</option>
                     <option value="1">ON</option>

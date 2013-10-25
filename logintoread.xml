@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+<name>Content - Login to Read</name>
+<author>Galaa</author>
+<creationDate>2013-04-29</creationDate>
+<copyright>Copyright (C) 2013 Nhuang Studio</copyright>
+<license>This extension in released under the GNU/GPL License - http://www.gnu.org/copyleft/gpl.html</license>
+<authorEmail>jianbo.zhu@gmail.com</authorEmail>
+<authorUrl>http://nhuang.com/</authorUrl>
+<version>1.1</version>
+<description>PLUGIN_LOGIN_TO_READ_DESC</description>
+<files>
+	<filename plugin="logintoread">logintoread.php</filename>
+	<folder>css</folder>
+	<folder>js</folder>
+	<folder>elements</folder>
+	<filename>index.html</filename>
+</files>
+<languages folder="language">
+	<language tag="en-GB">en-GB/en-GB.plg_content_logintoread.ini</language>
+	<language tag="en-GB">en-GB/en-GB.plg_content_logintoread.sys.ini</language>
+	<language tag="zh-CN">zh-CN/zh-CN.plg_content_logintoread.ini</language>
+	<language tag="zh-CN">zh-CN/zh-CN.plg_content_logintoread.sys.ini</language>
+	
+</languages>
+<config>
+	<fields name="params">
+	
+		<fieldset name="basic">
+		<field name="articleon" type="radio" default="0" label="LOGIN_READ_ARTCILE_ON" description="">
+                    <option value="0">OFF</option>
+                    <option value="1">ON</option>
+                </field>
+<field
+					name="catid"
+					type="category"
+					extension="com_content"
+					multiple="true"
+					size="10"
+					default=""
+					label="JCATEGORY"
+					description="MOD_LATEST_NEWS_FIELD_CATEGORY_DESC" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+		</fieldset>
+				
+
+		 <fieldset name="K2" addfieldpath="/plugins/content/logintoread/elements/">
+		 <field name="k2on" type="radio" default="0" label="LOGIN_READ_K2_ON" description="">
+                    <option value="0">OFF</option>
+                    <option value="1">ON</option>
+                </field>
+		  <field name="category_id" type="categoriesmultiple" default="" label="K2_SELECT_ONE_OR_MORE_CATEGORIES" description="K2_SELECT_ONE_ORE_MORE_CATEGORIES_FOR_WHICH_YOU_WANT_TO_FILTER_AN_ITEMS_LIST_SELECT_NONE_TO_FETCH_ITEMS_FROM_ALL_CATEGORIES">
+		  </field>
+		 </fieldset>
+		
+	</fields>
+	
+</config>
+</extension>
